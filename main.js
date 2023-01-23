@@ -252,7 +252,7 @@ async function fetchm3files(currentGame) {
 
     if (playerData.prefix.includes('edge')) {
         console.log('me no likey');
-        return fetchm3files(d, index);
+        return fetchm3files();
     }
 
     let m31 = await fetch(playerData.playURL);
