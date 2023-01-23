@@ -164,6 +164,8 @@ async function initLogin() {
             test = test.split("");
             test[i] = String.fromCharCode(Math.floor(Math.random() * 26) + 97)
             test = test.join("");
+        }else if(!isNaN(did[i])){
+            test[i] = Math.floor(Math.random() * 10).toString();   
         }
     }
     did = test;
