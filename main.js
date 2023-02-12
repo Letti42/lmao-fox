@@ -7,6 +7,7 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
 });
 let awesomestreamid = params?.stream;
+let cors = params?.cors;
 
 if(awesomestreamid)startVideo();
 
@@ -250,7 +251,7 @@ async function fetchm3files(currentGame) {
     let linkp = await fetch(data.url);
     let playerData = await linkp.json();
 
-    if (playerData.prefix.includes('edge')) {
+    if (playerData.prefix.includes('edge') && !cors) {
         console.log('me no likey');
         return fetchm3files();
     }
